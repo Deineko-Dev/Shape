@@ -3,72 +3,74 @@ interface IShape {
 }
 
 class Shape implements IShape {
+	protected String name;
+
+	public Shape() {
+		this.name = "Shape";
+	}
+
 	public String getName() {
-		return "Shape";
+
+		return this.name;
 	}
 }
 
 class Circle extends Shape {
-	@Override
-	public String getName() {
-		return "Circle";
+	public Circle() {
+		this.name = "Circle";
 	}
 }
 
 class Quad extends Shape {
-	@Override
-	public String getName() {
-		return "Quad";
+	public Quad() {
+		this.name = "Quad";
 	}
 }
 
 class Triangle extends Shape {
-	@Override
-	public String getName() {
-		return "Triangle";
+	public Triangle() {
+		this.name = "Triangle";
 	}
 }
 
 class Rectangle extends Shape {
-	@Override
-	public String getName() {
-		return "Rectangle";
+	public Rectangle() {
+		this.name = "Rectangle";
 	}
 }
 
 class Oval extends Shape {
-	@Override
-	public String getName() {
-		return "Oval";
+	public Oval() {
+		this.name = "Oval";
 	}
 }
 
-class Rhomb extends Shape {
-	@Override
-	public String getName() {
-		return "Rhomb";
+class Rhombus extends Shape {
+	public Rhombus() {
+		this.name = "Rhombus";
 	}
 }
 
-class Writer {
+class ShapeNameWriter {
 	private Shape shape;
 	
-	public Writer (Shape shape) {
+	public ShapeNameWriter (Shape shape) {
 		this.shape = shape;
 	}
-	
+
 	public void writeShapeName() {
-		System.out.println(this.shape.getName()); 
+		System.out.println(this.shape.getName());
 	}
 }
 
 public class ShapeApp {
 	public static void main(String[] args) {
-		new Writer(new Circle()).writeShapeName();
-		new Writer(new Quad()).writeShapeName();
-		new Writer(new Triangle()).writeShapeName();
-		new Writer(new Rectangle()).writeShapeName();
-		new Writer(new Oval()).writeShapeName();
-		new Writer(new Rhomb()).writeShapeName();
+		new ShapeNameWriter(new Shape()).writeShapeName();
+		new ShapeNameWriter(new Circle()).writeShapeName();
+		new ShapeNameWriter(new Quad()).writeShapeName();
+		new ShapeNameWriter(new Triangle()).writeShapeName();
+		new ShapeNameWriter(new Rectangle()).writeShapeName();
+		new ShapeNameWriter(new Oval()).writeShapeName();
+		new ShapeNameWriter(new Rhombus()).writeShapeName();
 	}
 }
