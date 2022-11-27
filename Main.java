@@ -51,7 +51,7 @@ class Rhomb extends Shape {
 	}
 }
 
-public class Writer {
+class Writer {
 	private Shape shape;
 	
 	public Writer (Shape shape) {
@@ -61,13 +61,15 @@ public class Writer {
 	public void writeShapeName() {
 		System.out.println(this.shape.getName()); 
 	}
-	
+}
+
+public class Main {
 	public static void main(String[] args) {
-        new Writer(new Circle()).writeShapeName();
-        new Writer(new Quad()).writeShapeName();
-        new Writer(new Triangle()).writeShapeName();
-        new Writer(new Rectangle()).writeShapeName();
-        new Writer(new Oval()).writeShapeName();
-        new Writer(new Rhomb()).writeShapeName();
-    }
+		new Writer(new Circle()).writeShapeName();
+		new Writer(new Quad()).writeShapeName();
+		new Writer(new Triangle()).writeShapeName();
+		new Writer(new Rectangle()).writeShapeName();
+		new Writer(new Oval()).writeShapeName();
+		new Writer(new Rhomb()).writeShapeName();
+	}
 }
