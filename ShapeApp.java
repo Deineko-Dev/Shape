@@ -1,53 +1,52 @@
-abstract class Shape {
-	private String name;
-	abstract public String getName();
+interface IShape {
+	String getName();
+}
+
+class Shape implements IShape {
+	public String getName() {
+		return "Shape";
+	}
 }
 
 class Circle extends Shape {
-	private String name = "Circle";
-	
+	@Override
 	public String getName() {
-		return this.name;
+		return "Circle";
 	}
 }
 
 class Quad extends Shape {
-	private String name = "Quad";
-	
+	@Override
 	public String getName() {
-		return this.name;
+		return "Quad";
 	}
 }
 
 class Triangle extends Shape {
-	private String name = "Triangle";
-	
+	@Override
 	public String getName() {
-		return this.name;
+		return "Triangle";
 	}
 }
 
 class Rectangle extends Shape {
-	private String name = "Rectangle";
-	
+	@Override
 	public String getName() {
-		return this.name;
+		return "Rectangle";
 	}
 }
 
 class Oval extends Shape {
-	private String name = "Oval";
-	
+	@Override
 	public String getName() {
-		return this.name;
+		return "Oval";
 	}
 }
 
 class Rhomb extends Shape {
-	private String name = "Rhomb";
-	
+	@Override
 	public String getName() {
-		return this.name;
+		return "Rhomb";
 	}
 }
 
@@ -63,7 +62,7 @@ class Writer {
 	}
 }
 
-public class Main {
+public class ShapeApp {
 	public static void main(String[] args) {
 		new Writer(new Circle()).writeShapeName();
 		new Writer(new Quad()).writeShapeName();
